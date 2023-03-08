@@ -1,4 +1,4 @@
-# XMonad Starter Kit Docs
+# GitPages
 
 [Live Server](https://www.npmjs.com/package/live-server)
 
