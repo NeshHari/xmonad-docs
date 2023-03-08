@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>XMonad Starter Kit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="../js/script.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-left">
+                <a href="https://github.com/NeshHari/XMonad" target="_blank" class="logo">XMonad Starter Kit</a>
+            </div>
+            <div class="nav-right">
+                <a href="https://github.com/NeshHari" target="_blank"><i
+                        class="fa-brands fa-github"></i>&nbsp;Profile</a>
+                <a href="#section-documentation"><i class="fa-solid fa-book"></i>&nbsp;Docs</a>
+                <a href="#section-showcase"><i class="fa-solid fa-binoculars"></i>&nbsp;Showcase</a>
+                <!-- <button><i class="fa-solid fa-sun"></i>&nbsp;Light</button> -->
+            </div>
+        </nav>
+        <div class="scroll-container">
+            <section id="section-home">
+                <div class="descriptor">
+                    <h1 class="main-header">XMonad Starter Kit</h1>
+                    <p class="slogan">Intuitive. Modular. Elegant.</p>
+                    <div class="quickswitch">
+                        <span class="quickswitch-item">Get Ready To</span>
+                    </div>
+                    <p class="whoami">
+                        Designed by <b>Nesh</b>, Engineered for <b>You</b>.
+                    </p>
+                    <div class="git-stats">
+                        <img alt="GitHub stargazers"
+                            src="https://img.shields.io/github/stars/NeshHari/XMonad?color=d8dee9&label=STARS%20&logo=github&logoColor=d8dee9&style=for-the-badge" />
+
+                        <img alt="GitHub forks"
+                            src="https://img.shields.io/github/forks/NeshHari/XMonad?color=d8dee9&logo=Git&logoColor=d8dee9&style=for-the-badge" />
+
+                        <img alt="GitHub issues"
+                            src="https://img.shields.io/github/issues/NeshHari/XMonad?color=d8dee9&label=ISSUES&logo=GitBook&logoColor=d8dee9&style=for-the-badge" />
+
+                        <img alt="Maintained"
+                            src="https://img.shields.io/badge/MAINTAINED-DUH!-purple?color=d8dee9&logo=Git&logoColor=d8dee9&style=for-the-badge" />
+                    </div>
+                </div>
+            </section>
+            <section id="section-documentation">
+                <h2>Documentation</h2>
+                <div class="section-documentation-inner">
+                    <div class="toc">
+                        <a href="#introduction">Introduction</a>
+                        <a href="#scope-of-coverage">Scope of Coverage</a>
+                        <a href="#preparatory-requirements">Preparatory Requirements</a>
+
+                        <a href="#installation-guidelines">Installation Guidelines</a>
+                        <a href="#compilation-advice-and-troubleshooting">Compilation Advice and Troubleshooting</a>
+                        <a href="#haskell-cheat-sheet">Haskell Cheat Sheet</a>
+                        <a href="#neovim-integration-with-haskell-language-server-hls">Neovim Integration with Haskell
+                            Language Server (HLS)</a>
+                        <a href="#modular-design">Modular Design</a>
+                        <a href="#mycatppuccinhs">MyCatppuccin.hs (Catppuccin Mocha)</a>
+                        <a href="#mystartupappshs">MyStartupApps.hs</a>
+                        <a href="#myscreenhs">MyScreen.hs</a>
+                        <a href="#myworkspaceshs">MyWorkspaces.hs</a>
+                        <a href="#mymanagemenths">MyManagement.hs</a>
+                        <a href="#mymanagementpositioninghs">MyManagementPositioning.hs</a>
+                        <a href="#myscratchpadshs">MyScratchpads.hs</a>
+                        <a href="#mylayoutshs">MyLayouts.hs</a>
+                        <a href="#perscreen">PerScreen</a>
+                        <a href="#sublayouts-and-boringwindows">SubLayouts and BoringWindows</a>
+                        <a href="#enhanced-borders">Enhanced Borders</a>
+                        <a href="#gaps-gaps-gaps">Gaps Gaps Gaps</a>
+                        <a href="#polybar-integration">Polybar Integration</a>
+                        <a href="#ewmh-module">EWMH Module</a>
+                        <a href="#xmonad-module">XMonad Module</a>
+                        <a href="#mypolybarhs">MyPolybar.hs</a>
+                        <a href="#event-management">Event Management</a>
+                        <a href="#event-swallowing-hook">Event Swallowing Hook</a>
+                        <a href="#x-property-change-event">X Property Change Event</a>
+                        <a href="#fullscreen-hack-for-windowed-applications-chromium">Fullscreen Hack for Windowed
+                            Applications (Chromium)</a>
+                        <a href="#java-application-hack">Java Application Hack</a>
+                        <a href="#hyper-keys">Hyper Keys</a>
+                        <a href="#emacs-like-key-bindings">Emacs-Like Key Bindings</a>
+                        <a href="#vim-like-easy-motion">Vim-Like Easy Motion</a>
+                        <a href="#cycle-through-workspaces">Cycle Through Workspaces</a>
+                        <a href="#flexible-mouse-resize">Flexible Mouse Resize</a>
+                        <a href="#search-engine-other-prompts">Search Engine & Other Prompts</a>
+                    </div>
+                    <div class="content">
+                        <div id="introduction" class="render">
+                            <h3>Introduction</h3>
+                            Unleash the power of XMonad, the dynamic tiling window manager
+                            that will leave your old window manager in the dust. Written in
+                            Haskell, XMonad packs a punch in terms of customization options
+                            and will transform the way you work. But don't worry, this
+                            guide, produced at the expense of blood, sweat, and tears (yes,
+                            literally), will make the transition a breeze. So, get ready to
+                            laugh in the face of intimidation and take control of your
+                            computing experience with XMonad. The time for revolution is
+                            now!
+                            <p></p>
+                        </div>
+
+                        <div id="scope-of-coverage" class="render">
+                            <h3>Scope of Coverage</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Haskell Language Server Integration with Neovim</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>The Fundamentals of Modularization</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Multi-Monitor and Hot-Plugging Support</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Polybar as Your Statusbar</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hyper Key Support</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            ResizableTile (Tall and Resizable, and Possible Grid
+                                            Replacement)
+                                        </td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Per-Screen (Different Layouts for Varied Screen
+                                            Dimensions)
+                                        </td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sub-Layouts (Custom Tabs) &amp; Window Navigation</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CycleWS (Cycling Through Workspaces and Screens)</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EasyMotion (Focus and Kill Any Visible Window)</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rescreen (Monitor Hot-Plugging)</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            WindowSwallowing (Hide Terminal Instance Which Launches
+                                            GUI)
+                                        </td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Java Hack (Better Support for Java Apps)</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Windowed Fullscreen (Chromium Support)</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EwmhDesktops (Communicate with Polybar)</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NamedScratchpads (Quick Commands, Glava, etc.)</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            ShowWMName (Display Workspace Name When Switching
+                                            Workspaces)
+                                        </td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Custom Prompts (Man Pages, Search Engines, etc.)</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Spacing/Gaps on the Fly</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Managehelpers (Center Float, Shift to Workspace, etc.)
+                                        </td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sane Keybindings with mkKeymap (Emacs-Style)</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Catppuccin Color Scheme</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Better Borders (Single Open Window, Fullscreen, etc.)
+                                        </td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Flexible Mouse Resize</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Topic Spaces</td>
+                                        <td>Upcoming</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Theme Switching</td>
+                                        <td>Upcoming</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Support for NixOS</td>
+                                        <td>Future</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div id="preparatory-requirements" class="render">
+                            <h3>Preparatory Requirements</h3>
+                            <p>
+                                The following guide requires the latest/git version of XMonad
+                                to be installed to avert recompilation errors from missing
+                                dependencies. For compatibility with the stable version (&gt;=
+                                0.17), consider removing
+                                <a
+                                    href="https://github.com/xmonad/xmonad-contrib/commit/cf13f8f9a7acddc1134be3f71097633def1476a8">disableEwmhManageDesktopViewport</a>
+                                in xmonad.hs, which is unavailable in said version at the time
+                                of writing.
+                            </p>
+                        </div>
+
+                        <div id="installation-guidelines" class="render">
+                            <p>
+                                <strong>IMPORTANT</strong>: Please manually install the
+                                additional fonts and run
+                                <code>autorandr --save single</code> for polybar-based modules
+                                to appear. The latter is mandatory since polybar launch is
+                                integrated with hotplugging support.
+                            </p>
+                            <div class="install-buttons">
+                                <a href="#automatic-installation">Automatic Installation</a>
+                                <a href="#manual-installation">Manual Installation</a>
+                                <a href="#additional-fonts">Additional Fonts</a>
+                                <a href="#tuicli-steps">TUI/CLI Steps</a>
+                                <a href="#wallpaper">Wallpaper</a>
+                                <a href="#cursor">Cursor</a>
+                                <a href="#spotify">Spotify</a>
+                                <a href="#gtk">GTK</a>
+                                <a href="#discord">Discord</a>
+                                <a href="#neovim">Neovim</a>
+                                <a href="#aliases">Useful Aliases</a>
+                            </div>
+                            <div id="automatic-installation" class="install-render">
+                                <h3>Automatic Installation (Arch Linux)</h3>
+                                <p><em>This <a href="https://github.com/NeshHari/XMonad/blob/main/setup.sh">setup
+                                            script</a> is offered as a convenience, but
+                                        its
+                                        use is at your own discretion (<strong>unstable</strong>). Manual
+                                        installation
+                                        is recommended for a safer and more controlled process, as it eliminates the
+                                        risk of accidental overwrites or incongruous symlinks. As the author, I
+                                        suggest
+                                        manual installations to better respect the user&#39;s file structure. Please
+                                        review before use.</em></p>
+                                <code class="language-fish">
+                                    cd ~ <br>
+                                    wget https://raw.githubusercontent.com/NeshHari/XMonad/main/setup.sh bash <br>
+                                    setup.sh
+                                </code>
+                            </div>
+
+                            <div id="manual-installation" class="install-render">
+                                <h3>Dependencies for Manual Installation</h3>
+                                <p><em>Note: Paru is interchangeable with any AUR helper</em></p>
+                                <code class="language-fish">paru -Syu alacritty autorandr bat beautyline
+                                    catppuccin-cursors-mocha catppuccin-gtk-theme-mocha cava dunst eww-git fd feh
+                                    fish fzf ghc ghcup-hs-bin git glava haskell-utf8-string haskell-x11 jgmenu kitty
+                                    lazygit libnotify lxappearance neovim nodejs npm polybar picom-pijulius-git
+                                    playerctl python-pip rofi stack starship stow ttf-fira-code ttf-font-awesome
+                                    ttf-jetbrains-mono-nerd unclutter wmctrl xcape xdo xorg-xinit xorg-xmessage
+                                    xorg-xmodmap xorg-xsetroot zoxide
+                                </code>
+                                <p><em>Note: Polybar will not automatically launch after installation. This is
+                                        expected
+                                        behavior. The <a target="_blank"
+                                            href="https://github.com/NeshHari/XMonad/blob/main/polybar/.config/polybar/launch.sh">polybar
+                                            launch
+                                            script</a> is deliberately tied to autorandr, which is used for
+                                        hot-plugging. Refer to the section on MyRescreen.hs to see how they all come
+                                        together.</em></p>
+                            </div>
+
+                            <div id="additional-fonts" class="install-render">
+                                <h3>Additional Fonts</h3>
+                                <ul>
+                                    <li><a href="https://www.dafont.com/vanilla-caramel.font">Vanilla Caramel</a>
+                                    </li>
+                                    <li><a href="https://www.dafont.com/cream-cake.font">Cream Cake</a></li>
+                                    <li><a href="https://www.dafont.com/sugar-snow.font">Sugar Snow</a></li>
+                                    <li><a href="https://www.dafont.com/purple-smile.font">Purple Smile</a> --
+                                        <em>Optional</em>
+                                    </li>
+                                </ul>
+                                <p><em>Note: Downloaded fonts should be placed in ~/.local/share/fonts, before
+                                        running
+                                        fc-cache -f -v to update the font cache.</em></p>
+                            </div>
+
+
+                            <div id="tuicli-steps" class="install-render">
+                                <h3>TUI/CLI Steps</h3>
+                                <p><em>Note: Avoid using &quot;stow *&quot; unless on a fresh install. By default,
+                                        measures are in place so that you do not accidentally overwrite existing
+                                        configurations. I suggest manually copying configurations to the pertinent
+                                        directory, or selectively stowing certain directories (e.g. stow fish)
+                                        whilst in
+                                        the root of the cloned folder.</em></p>
+                                <code class="language-fish">
+                                    git clone https://github.com/NeshHari/XMonad.git <br>
+                                    mv XMonad starter_kit_dots <br cd starter_kit_dots <br rm README.md setup.sh <br
+                                        stow * <br cd ~/.config/xmonad <br>
+                                    rm -r xmonad xmonad-contrib <br>
+                                    git clone https://github.com/xmonad/xmonad.git <br>
+                                    git clone https://github.com/xmonad/xmonad-contrib.git <br>
+                                    stack init <br>
+                                    stack install <br>
+                                    sudo ln -s ~/.local/bin/xmonad /usr/bin <br>
+                                    xmonad --recompile &amp;&amp; xmonad --restart
+                                </code>
+                            </div>
+
+                            <div id="wallpaper" class="install-render">
+                                <h3>Wallpaper</h3>
+                                <p>Current: <a
+                                        href="https://github.com/NeshHari/XMonad/tree/main/wallpapers/wallpapers/out_the_window_darker.png"
+                                        target="_blank">Out
+                                        The Window ~
+                                        Custom (multi-filtered)</a></p>
+                                <p>Other 1: <a
+                                        href="https://github.com/NeshHari/XMonad/blob/main/wallpapers/wallpapers/pots_custom.png"
+                                        target="_blank">Pots ~ Custom
+                                        (multi-filtered)</a></p>
+                                <p>Other 2: <a
+                                        href="https://github.com/NeshHari/XMonad/blob/main/wallpapers/wallpapers/dark_arts_custom.png"
+                                        target="_blank">Dark Arts ~ Custom
+                                        (multi-filtered)</a></p>
+                                <p>You may change the path to your wallpaper in
+                                    ~/.config/xmonad/lib/Custom/MyStartupApps.hs</p>
+                            </div>
+
+                            <div id="cursor" class="install-render">
+                                <h3>Cursor</h3>
+                                <p>You may optionally install a custom cursor theme. I alternate between <a
+                                        href="https://aur.archlinux.org/packages/oreo-cursors-git">Oreo</a>, which
+                                    provides a handful of catppuccin-like colors with a little more contrast, and <a
+                                        href="https://aur.archlinux.org/packages/catppuccin-mocha-dark-cursors">Catppuccin
+                                        Mocha Dark Cursors</a>. Once installed, the new cursor can be set with
+                                    lxappearance.</p>
+                            </div>
+
+
+                            <div class="install-render" id="spotify">
+                                <h3>Spotify</h3>
+                                <p>You may use the <a href="https://aur.archlinux.org/packages/spotify">official
+                                        package</a> or <a
+                                        href="https://flathub.org/apps/details/com.spotify.Client">Flatpak</a> to
+                                    get
+                                    spotify.</p>
+                                <code class="language-fish">
+                                    flatpak install flathub com.spotify.Client<br>
+                                    flatpak run com.spotify.Client
+                                </code>
+                                <p>To integrate with polybar and avoid the traceback error, you may need to run the
+                                    following command:</p>
+                                <code class="language-fish">pip install dbus-python</code>
+                                <p>Additionally for <b>non-eww</b> based configurations, to ensure polybar
+                                    (main-middle)
+                                    launches only when spotify is used and closes when it is not, please modify the
+                                    desktop entry:</p>
+                                <code class="language-shell">#PATH:~/.local/share/applications/spotify.desktop<br>
+                                    (copy and modify /usr/share/applications/spotify.desktop so it persist after
+                                    updates)<br>
+
+                                    [Desktop Entry]<br>
+                                    Type=Application<br>
+                                    Name=Spotify<br>
+                                    ...<br>
+                                    Exec=/home/myusername/.config/polybar/scripts/poly_spoti.sh<br>
+                                    ...
+                                </code>
+                                <p><em>Note: Configurations using <a
+                                            href="https://aur.archlinux.org/packages/spicetify-cli">Spicetify</a>
+                                        are
+                                        available <a href="./spicetify/.config/spicetify/Themes/darkarts/">here</a>
+                                        and
+                                        <a href="./spicetify/.config/spicetify/config-xput.ini">here</a> but require
+                                        manual configuration on your end. Refer to the <a
+                                            href="https://spicetify.app/docs/getting-started">official docs</a> for
+                                        more
+                                        information.</em></p>
+                            </div>
+
+                            <div class="install-render" id="gtk">
+                                <h3>GTK</h3>
+                                <p>For GTK applications, open lxappearance and select the Catppuccin theme of
+                                    choice. In
+                                    the Widget section, set the default font to Sugar Snow/Purple Smile. In the Icon
+                                    Theme section, select BeautyLine.</p>
+                            </div>
+
+                            <div class="install-render" id="discord">
+                                <h3>Discord</h3>
+                                <p>Install <a
+                                        href="https://aur.archlinux.org/packages/betterdiscord-installer">BetterDiscord</a>
+                                    and inject this code into CSS <code>
+                                        @import
+                                        url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-lavender.theme.css");
+                                    </code>
+                                </p>
+                            </div>
+
+                            <div class="install-render" id="neovim">
+                                <h3>Neovim</h3>
+                                <p>Launch Neovim and let it do its thing :) Watch out for those LSP/Treesitter
+                                    prompts,
+                                    and install what you need automatically.</p>
+                            </div>
+
+                            <div class="install-render" id="aliases">
+                                <h3>Pacman Command Aliases</h3>
+                                <p>Fish aliases such as &quot;pacsi&quot; and &quot;parusi&quot; help you fuzzy find
+                                    official and AUR packages respectively with a preview panel consisting of all
+                                    necessary information, right in your terminal. You can multi select or toggle
+                                    select
+                                    packages my marking or unmarking them using Tab. Likewise, you can remove
+                                    existing
+                                    packages in your system using &quot;pacrem&quot;. Lastly, &quot;pacupd&quot;
+                                    runs
+                                    &#39;sudo pacman -Syu&#39;.</p>
+                            </div>
+                        </div>
+
+                        <div id="compilation-advice-and-troubleshooting" class="render">
+                            <h3>Compilation Advice and Troubleshooting</h3>
+                            <p><em>Note: xorg-xmessage must be installed to view compilation errors</em></p>
+                            <p>In xmonad, there are several common recompilation errors that can occur while building a
+                                configuration. Some of these errors include:</p>
+                            <ul>
+                                <li><strong>Mutual recursion with imported modules</strong> - When two or more functions
+                                    are defined in terms of each other, creating an infinite loop, and the functions are
+                                    defined in different imported modules. To fix this, you will need to ensure that the
+                                    mutual recursion is not happening by importing the modules in a different order or
+                                    by changing the function calls to not cause recursion.</li>
+                                <li><strong>Ambiguity Occurrences</strong> - An ambiguity error in xmonad can occur when
+                                    multiple functions with the same name are imported from different modules. To fix
+                                    this, you can use a qualified import or use an import abbreviation (import module
+                                    <em>as</em> abbreviation) to specify which function to use.<br><br>For example, if
+                                    you want to use the function foo from both module A and B in your xmonad
+                                    configuration, you can import them like this:<br><br><code>import A (foo)<br>import
+                                        B (foo) as fooB</code><br><br>Then, when you use the function foo in your code,
+                                    it will refer to the one imported from module A, and you can use fooB to refer to
+                                    the one from module B.<br><br>Alternatively, you can use a qualified import to
+                                    specify which function to use like this:<br><br><code>import qualified A<br>import
+                                        qualified B</code><br><br>Then, when you use the function foo in your code, you
+                                    will have to specify from which module you want to use it, like A.foo or B.foo. By
+                                    doing this, you can avoid the ambiguity error, the compiler will understand which
+                                    function you want to use.
+                                </li>
+                                <li><strong>Unresolved symbols</strong> - When the compiler is unable to find the
+                                    definition of a symbol that is referenced in the code. To fix this, you will need to
+                                    import the necessary modules or define the symbol.</li>
+                                <li><strong>Type error</strong> - When the type of a variable or expression does not
+                                    match what is expected by the function or operation. To fix this, you will need to
+                                    ensure that the types of the variables and expressions are consistent with what is
+                                    expected.</li>
+                                <li><strong>Syntax error</strong> - When the code does not conform to the Haskell
+                                    syntax. To fix this, you will need to check for missing or extra characters, or any
+                                    other syntax issues.</li>
+                                <li><strong>Missing type signatures/incomplete type annotations</strong>- When the type
+                                    signature of a function or variable is missing or not specified, the compiler may
+                                    not have enough information to understand the expected behavior of the function or
+                                    variable. This can lead to potential type errors during compilation. To avoid this,
+                                    it's important to ensure that all functions and variables have their type signature
+                                    specified. This way, the compiler can understand the inputs and outputs of the
+                                    function or variable, and how it should behave. Although it's possible to suppress
+                                    this warning by using the -Wno-missing-signatures flag when compiling the code, it's
+                                    not recommended as it can lead to potential type errors in the future. For best
+                                    practices, it's always recommended to include the type signature for functions and
+                                    variables.</li>
+                                <br><code>-- to ignore, prepend this at the top of the file<br>--{-# OPTIONS_GHC
+                                    -Wno-missing-signatures #-} <br>
+                                    -- to address, explicitly define the type for myVar (e.g. String) <br>
+                                    myVar :: String </code>
+                            </ul>
+                        </div>
+
+                        <div id="haskell-cheat-sheet" class="render">
+                            <h3>Haskell Cheat Sheet</h3>
+                            <p>
+                                Here's a pretty good <a target="_blank"
+                                    href="https://hackage.haskell.org/package/CheatSheet-1.10/src/CheatSheet.pdf">cheat
+                                    sheet</a> to familiarise yourself with Haskell if you come from any other
+                                programming language.
+                            </p>
+
+                            <h4>Difference between $ and . operators</h4>
+                            <p>
+                                In Haskell, both the $ operator and the dot (.) operator are used to control the order
+                                of function application. However, they have different functionality.
+
+                                The $ operator is used to apply a function to an argument without the need for
+                                parentheses. This operator has the lowest precedence of any operator in Haskell and is
+                                often used to make code more readable by allowing the argument to be placed at the end
+                                of a chain of function calls. For example, f(g(x)) can be rewritten as f $ g x.
+                                On the other hand, the dot operator (.) is used to compose two functions together. This
+                                creates a new function that applies the right-hand function to the result of the
+                                left-hand function. An example of this
+                            </p>
+                        </div>
+
+                        <div id="neovim-integration-with-haskell-language-server-hls" class="render">
+                            <h3>Neovim Integration with Haskell Language Server (HLS)</h3>
+                            <p>Managing LSP servers in Neovim can be made easier by using the <a
+                                    href="https://github.com/williamboman/mason.nvim">Mason</a> plugin. A simpler option
+                                would be to install <a href="https://github.com/VonHeikemen/lsp-zero.nvim">LSP Zero</a>.
+                            </p>
+                            <br>
+                            <code>
+                                { 'VonHeikemen/lsp-zero.nvim',<br>
+                                dependencies = {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{ 'neovim/nvim-lspconfig' },<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{ 'williamboman/mason.nvim' },<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{ 'williamboman/mason-lspconfig.nvim' },<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{ 'hrsh7th/nvim-cmp' },<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{ 'hrsh7th/cmp-buffer' },<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{ 'hrsh7th/cmp-path' },<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{ 'saadparwaiz1/cmp_luasnip' },<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{ 'hrsh7th/cmp-nvim-lsp' },<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{ 'hrsh7th/cmp-nvim-lua' },<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{ 'L3MON4D3/LuaSnip' },<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{ 'rafamadriz/friendly-snippets' },<br>
+                                }}
+                            </code>
+                            <p>Note: My <a href="./nvim/.config/nvim/after/plugin/lsp.lua">lsp.lua</a> file contains
+                                configuration information post-installation.</p>
+                            <p>In order to ensure optimal compatibility between the Haskell Language Server (HLS) and
+                                Neovim, it is recommended to set up XMonad using the package manager stack or cabal.
+                                Installing HLS via Pacman or AUR may result in errors, such as "could not find module"
+                                or "unknown package" on import of modules, even if HLS is successfully attached and
+                                running on the Neovim buffer.</p>
+                            <p>HLS offers a range of features including diagnostics, completions, code actions, and
+                                formatting. To avoid potential errors, I suggest installing HLS via "ghcup install hls,"
+                                so that Mason can detect the executable when running ":MasonInstall
+                                haskell-language-server" in Neovim. A complete list of HLS features can be found at the
+                                website <a
+                                    href="https://haskell-language-server.readthedocs.io/en/latest/features.html">here</a>.
+                            </p>
+                            <p>Personally, my formatter of choice is <a
+                                    href="https://haskell-language-server.readthedocs.io/en/latest/features.html">Ormolu</a>
+                                due to its readability and consistency. It is also the default formatter for HLS. You
+                                may want to include a key mapping and/or autocommand for formatting in Neovim.</p>
+                            <code>
+                                -- autocommand<br>
+                                vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format({async = false})]]<br>
+                                -- manual format in normal mode (assuming vim.g.mapleader is set)<br>
+                                vim.keymap.set("n", "&lt;leader&gt;fo", vim.lsp.buf.format)<br><br>
+                            </code>
+
+                            You may also include other formatters (e.g., fourmolu, brittany) by first installing
+                            them with Mason, and integrating them with null-ls as shown
+                            <a href="./nvim/.config/nvim/after/plugin/nullls.lua">here</a>.<br><br>
+
+                            Moving on, a minimal hie.yaml must be defined for HLS to function.<br><br> <code>
+
+                                cradle:<br>
+                                stack:<br>
+                            </code><br>
+
+                            Expected High-Level Structure<br><br><code>
+
+                                .<br>
+                                ├── hie.yaml<br>
+                                ├── lib/<br>
+                                ├── stack.yaml<br>
+                                ├── stack.yaml.lock<br>
+                                ├── xmonad<br>
+                                ├── xmonad-contrib<br>
+                                └── xmonad.hs<br>
+                                br><br></code>
+
+                            If XMonad was installed via stack, symlink or add the xmonad executable to PATH to make
+                            "xmonad --recompile/--restart" usable.<br><br><code>
+
+                                sudo ln -s ~/.local/bin/xmonad /usr/bin<br>
+                            </code>
+                        </div>
+
+                        <div id="modular-design" class="render">
+                            <h3>Modular Design</h3>
+                            <p>
+                                I utilize a modular structure to enhance accessibility, manageability, and testability
+                                in
+                                comparison to monolithic code. This method consists of dividing/breaking the code into
+                                smaller, independent modules that can be integrated as needed. In XMonad, these modules
+                                are
+                                typically imported from a folder named "lib", which is located in the same directory as
+                                the
+                                xmonad.hs file. If the folder does not already exist, it can be created. Users can
+                                create
+                                individual modules by creating files with the .hs extension within the lib folder or any
+                                of
+                                its subfolders (e.g. ./lib/Custom). These modules can then be imported directly into
+                                xmonad.hs or indirectly through other modules for use.
+                            </p>
+
+                            <h4>Fundamental Principles</h4>
+
+                            <p>General Path: ./lib/Custom/MyModule.hs, where "." is relative to where xmonad.hs resides,
+                                and MyModule is replaceable by the name of the module. As a rule of thumb, ensure both
+                                file name (MyModuleName.hs) and module name (Custom.MyModuleName) are the same.</p>
+
+                            <h4>lib/Custom/MyModule.hs</h4>
+                            <code>-- define the module at the top of the file<br>module Custom.MyModule where<br>--
+                                other imports<br>-- code...</code>
+
+                            <h4>xmonad.hs</h4>
+                            <code>-- import the custom module<br>import Custom.MyModule<br>-- code...</code>
+
+                            <p>xmonad/lib/Custom<br>&gt; exa --tree<br>.<br>├── MyCatppuccin.hs<br>├──
+                                MyDecorations.hs<br>├── MyKeys.hs<br>├── MyLayouts.hs<br>├── MyMacAddresses.hs
+                                (hidden)<br>├── MyManagement.hs<br>├── MyManagementPositioning.hs<br>├──
+                                MyMouse.hs<br>├── MyPolybar.hs<br>├── MyScratchpads.hs<br>├── MyScreen.hs<br>├──
+                                MyStartupApps.hs<br>└── MyWorkspaces.hs</p>
+
+                            <p><em>Note: Ensure no mutually recursive modules exist, or XMonad will not compile. These
+                                    are modules that import each other. For example, if you import Custom.MyScratchpads
+                                    in MyManagement.hs, do not import Custom.MyManagement.hs in Custom.MyScratchpads. If
+                                    the need arises, you can bypass this by extracting part of the module into an even
+                                    simpler module, as seen in MyManagementPositioning.hs.</em></p>
+                        </div>
+
+                        <div id="mycatppuccinhs" class="render">
+                            <p>
+                                In order to improve recognition and simplify the use of the
+                                <a href="https://github.com/catppuccin/catppuccin#user-content--palettes">Catppuccin
+                                    Mocha</a>
+                                palette, the MyCatppuccin.hs file should define color variables for each color in the
+                                palette.
+                                Doing this prevents the need to memorise hex representations for each color.
+                                To prevent ambiguity when used in conjunction with other color schemes with the same
+                                variable name,
+                                it is recommended to prepend the color variables with something unique to that color
+                                scheme,
+                                such as "cat". For example, "catBlue" and "nordBlue" are different,
+                                but using just "blue" creates ambiguity errors.
+                                Refer to the "Compilation Advice and Troubleshooting" subsection for other methods to
+                                prevent ambiguous
+                                occurrences.
+                            </p>
+                            <br>
+                            <code>
+                                module Custom.MyCatppuccin where<br>
+                                <br>
+                                catRosewater, catFlamingo, catPink, catMauve, catRed, catMaroon, catPeach, catYellow,
+                                catGreen, catTeal, catSky, catSapphire, catBlue, catLavender, catText, catSubtext1,
+                                catSubtext0, catOverlay2, catOverlay1, catOverlay0, catSurface2, catSurface1,
+                                catSurface0, catBase, catMantle, catCrust :: String<br>
+                                catRosewater = "#f5e0dc"<br>
+                                catFlamingo = "#f2cdcd"<br>
+                                catPink = "#f5c2e7"<br>
+                                catMauve = "#cba6f7"<br>
+                                catRed = "#f38ba8"<br>
+                                catMaroon = "#eba0ac"<br>
+                                catPeach = "#fab387"<br>
+                                catYellow = "#f9e2af"<br>
+                                catGreen = "#a6e3a1"<br>
+                                catTeal = "#94e2d5"<br>
+                                catSky = "#89dceb"<br>
+                                catSapphire = "#74c7ec"<br>
+                                catBlue = "#89b4fa"<br>
+                                catLavender = "#b4befe"<br>
+                                catText = "#cdd6f4"<br>
+                                catSubtext1 = "#bac2de"<br>
+                                catSubtext0 = "#a6adc8"<br>
+                                catOverlay2 = "#9399b2"<br>
+                                catOverlay1 = "#7f849c"<br>
+                                catOverlay0 = "#6c7086"<br>
+                                catSurface2 = "#585b70"<br>
+                                catSurface1 = "#45475a"<br>
+                                catSurface0 = "#313244"<br>
+                                catBase = "#1e1e2e"<br>
+                                catMantle = "#181825"<br>
+                                catCrust = "#11111b"<br>
+                            </code>
+                        </div>
+
+                        <div id="mystartupappshs" class="render">
+                            <h3>MyStartupApps.hs</h3>
+                            <p>
+                                The main difference between the spawn and spawnOnce functions in XMonad is that spawn
+                                will start the specified command every time it is called, while spawnOnce will start the
+                                specified command only the first time it is called, and subsequent calls will have no
+                                effect. Despite traditional use cases where the wallpaper is set only once, some users
+                                might choose to set it every time xmonad is restarted so as to better support monitor
+                                hot-plugging. This ensures that the wallpaper will be set correctly even if a new
+                                monitor is plugged in or if the resolution of the monitor changes. This assumes the user
+                                utilises something like "feh bg-scale" in order to scale the wallpaper accordingly.
+                            </p>
+                            <code>
+                                module Custom.MyStartupApps where<br>
+                                <br>
+                                import XMonad<br>
+                                import XMonad.Util.SpawnOnce<br>
+                                <br>
+                                myStartupHook :: X ()<br>
+                                myStartupHook = do<br>
+                                spawn "feh --bg-scale ~/wallpapers/dark_arts_custom.png"<br>
+                                spawn "~/scripts/feh-blur.sh -s; ~/scripts/feh-blur.sh -d"<br>
+                                spawn "killall picom; picom -b"<br>
+                                spawnOnce "easyeffects --gapplication-service &"<br>
+                            </code>
+                        </div>
+
+                        <div id="myscreenhs" class="render">
+                            <h3>MyScreen.hs</h3>
+                            <p>Hot plugging is a crucial feature for any multi-monitor workflow as it allows users to
+                                seamlessly add or remove monitors without disrupting their workflow. XMonad provides a
+                                <a
+                                    href="https://xmonad.github.io/xmonad-docs/xmonad-contrib-0.16.999/XMonad-Hooks-Rescreen.html">custom
+                                    hook</a> that is best used in conjunction with other tools such as <a
+                                    href="https://github.com/phillipberndt/autorandr">autorandr</a>, which automatically
+                                selects a predefined configuration dependent on the number of connected displays. It
+                                works by listening for RandR events and performing a defined action such as restarting
+                                xmonad when the number of screens changes. Together they provide a robust solution for
+                                monitor hot-plugging.
+                            </p>
+                            <h4>Autorandr</h4>
+                            <p>Required package: <a
+                                    href="https://archlinux.org/packages/community/any/autorandr/">autorandr</a></p>
+                            <p>Firstly, ensure autorandr detects all possible monitor combinations. In this example, I
+                                shall provide single and dual monitor setups. This assumes the layouts (i.e.,
+                                portrait/landscape &amp; positioning) are already set up.</p>
+                            <p>With only one display on, run the following command:</p>
+                            <code>autorandr --save single</code><br>
+                            <p><em>Note: There may be cases, particularly on boot, where the second monitor is turned
+                                    off (i.e., black screen) but connected to a power supply and display port. In cases
+                                    where xrandr does not correctly detect the screen resolution, you may want to force
+                                    the second monitor to be off before saving the "single" profile. In my setup, DP-1
+                                    is the second monitor I want off, whilst the specified resolution is for the monitor
+                                    I wish to utilise.</em></p>
+                            <code>xrandr --fb 2560x1440 --output DP-1 --off<br>
+                                autorandr --save single --force</code><br>
+
+                            <p>With both displays on, run the following command:</p>
+                            <code>autorandr --save dual</code><br>
+                            <p>Use the following command to ensure the correct layout is detected:</p>
+                            <code>autorandr --detected</code><br>
+                            <p>Adapt this concept to whatever configuration you have. To debug, run the following:</p>
+                            <code>autorandr --debug --dry-run -cf</code>
+
+                            <h4>Rescreen Hook</h4>
+                            <p>Once autorandr is good to go, add the self-explanatory Rescreen hooks below. If you get
+                                kicked to TTY (i.e., Xorg crashed), increase the sleep duration before restarting
+                                xmonad. My purpose for "restarting" is to recall the StartupHook in
+                                Custom.MyStartupApps, and spawn polybar and feh accordingly on the detected monitor.
+                                This is critical when switching from smaller to more extensive displays (e.g., single ->
+                                dual monitor).</p>
+                            <code>module Custom.MyScreen where<br><br>import XMonad<br>import
+                                XMonad.Hooks.Rescreen<br><br>myAfterRescreenHook :: X ()<br>myAfterRescreenHook =
+                                spawn "sleep 1; xmonad --restart"<br><br>myRandrChangeHook :: X
+                                ()<br>myRandrChangeHook = spawn "autorandr --change"<br><br>rescreenCfg ::
+                                RescreenConfig<br>rescreenCfg =<br> def<br> { afterRescreenHook =
+                                myAfterRescreenHook,<br> randrChangeHook = myRandrChangeHook<br> }</code>
+                        </div>
+
+                        <div id="myworkspaceshs" class="render">
+                            <p>Workspaces are a powerful feature that allow users to organize and manage their open
+                                applications in a highly customizable way. The names of these workspaces can be chosen
+                                according to personal preference. Utilizing <a
+                                    href="https://hackage.haskell.org/package/xmonad-contrib-0.17.1/docs/XMonad-Layout-ShowWName.html">XMonad.Layout.ShowWName</a>
+                                via the layout hook will display the assigned names on the screen when switching
+                                workspaces. It is important to note that the names assigned to workspaces must also be
+                                reflected in the Polybar configuration, particularly if icons are utilized. The
+                                XMonad.Layout.ShowWName package provides additional functionality and customization
+                                options which are covered in the Custom.MyDecorations
+                                module.</p>
+                            <code>module Custom.MyWorkspaces where</code>
+                            <code>myWorkspaces :: [String]<br>
+                                myWorkspaces = ["one", "two", "three", "four", "five"]</code>
+                            <p>Snippet of EWMH module in Polybar's config.ini:</p>
+                            <code>icon-0 = one;&lt;icon-for-ws-1&gt;<br>
+                                icon-1 = two;&lt;icon-for-ws-2&gt;<br>
+                                icon-2 = three;&lt;icon-for-ws-3&gt;<br>
+                                icon-3 = four;&lt;icon-for-ws-4&gt;<br>
+                                icon-4 = five;&lt;icon-for-ws-5&gt;</code>
+                            <p>Click <a
+                                    href="https://github.com/NeshHari/XMonad/blob/main/polybar/.config/polybar/TheStainsOfPurple/config.ini">here</a>
+                                for an example Polybar
+                                configuration.</p>
+                        </div>
+
+
+                    </div>
+            </section>
+            <section id="section-showcase">
+                <h2>Showcase</h2>
+                <div class="theme-container">
+                    <div class="theme-catppuccin">
+                        <img src="images/starter_kit.gif" align="center" width="200">
+                        <div>
+                            <h3>Starter Kit</h3>
+                            <p>Default Theme: Catppuccin Mocha</p>
+                        </div>
+                    </div>
+                    <div class="theme-kanagawa">
+                        <img src="images/expansion.gif" align="center" width="200">
+                        <div>
+                            <h3>Expansion</h3>
+                            <p>Theme: Kanagawa</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="popup-kanagawa hidden">
+                <div class="popup-header">
+                    <p>Kanagawa</p> <button class="popup-close-kanagawa">X</button>
+                </div>
+                <img src="images/kanagawa.jpg" align="center" width="100%">
+            </div>
+            <div class="popup-catppuccin hidden">
+                <div class="popup-header">
+                    <p>Catppuccin Mocha</p>
+                    <button class="popup-close-catppuccin">X</button>
+                </div>
+                <img src="images/eww.png" align="center" width="100%">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
