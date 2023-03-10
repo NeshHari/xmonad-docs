@@ -96,19 +96,22 @@ button {
   flex-direction: column;
   height: 100%;
   width: 100%;
+  padding: 0 1em;
 }
 
 .descriptor {
+  max-width: 60vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 0.5em;
+  padding: 1em;
 }
 
 .main-header {
   font-family: "Poppins";
-  font-size: 3rem;
+  font-size: 2.5rem;
   background-color: var(--text-highlight);
   border-radius: 0.1em;
   padding: 0.1em 0.3em;
@@ -116,7 +119,8 @@ button {
 
 .git-stats {
   padding: 3em;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1em;
 }
 
@@ -168,18 +172,25 @@ button {
 }
 
 .scroll-container {
-  width: 100%;
+  width: fit-content;
   height: calc(100vh - var(--navbar-height) - 2em);
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
+.scroll-container::-webkit-scrollbar {
+  width: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
 .scroll-container > section {
   width: 100%;
   height: 100%;
   scroll-snap-align: start;
-  margin: 0.5em 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -242,7 +253,6 @@ h2 {
   height: fit-content;
   box-shadow: 0 0 0.5em 0.1em var(--text-highlight);
   text-align: justify;
-  text-justify: inter-word;
   overflow-y: auto;
   max-height: 85%;
 }
@@ -304,6 +314,7 @@ code {
   padding: 0 0.2em;
   font-family: "Fira Code", monospace;
   font-size: 0.9rem;
+  text-align: left;
 }
 
 .install-render code {
@@ -321,9 +332,10 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 3em;
   width: 50%;
-  margin-top: 3em;
+  margin-top: 2em;
   max-height: 80%;
 }
 
@@ -411,4 +423,102 @@ code {
 .stop-scrolling {
   height: 100%;
   overflow: hidden;
+}
+
+@media (max-width: 40em) {
+  .container {
+    padding: 0.2em;
+  }
+
+  nav {
+    font-size: 0.9rem;
+    padding: 0.1em 0.5em;
+    margin: 0.3em;
+  }
+
+  .nav-right {
+    gap: 1em;
+  }
+
+  .descriptor > h1 {
+    font-size: 2rem;
+  }
+
+  .git-stats {
+    zoom: 0.8;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .scroll-container > section > h2 {
+    font-size: 1.2rem;
+  }
+
+  .section-documentation-inner {
+    padding: 0.5em;
+    font-size: 0.8rem;
+    flex-direction: column;
+    max-height: 80%;
+  }
+
+  .content {
+    max-width: 80vw;
+  }
+
+  .section-documentation-inner .content h3 {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .section-documentation-inner .toc {
+    max-height: 30%;
+    font-size: 0.2rem;
+  }
+
+  .scroll-container .section-documentation-inner .toc a {
+    font-size: 0.8rem;
+  }
+
+  .active {
+    font-size: 0.9rem !important;
+  }
+
+  .install-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .render {
+    max-width: 100vw;
+  }
+
+  td {
+    text-align: left;
+  }
+
+  code,
+  text {
+    font-size: 0.8rem;
+    overflow-x: auto;
+  }
+
+  code.language-fish {
+    padding: 0em 0.5em;
+  }
+
+  .theme-container {
+    width: fit-content;
+    gap: 1em;
+    font-size: 0.8rem;
+    max-width: 80vw;
+    /* margin-left: -2em; */
+  }
+
+  .theme-catppuccin > img,
+  .theme-kanagawa > img {
+    border-radius: 1em 0 0 1em;
+  }
+
+  .theme-catppuccin > div,
+  .theme-kanagawa > div {
+    padding: 0m;
+  }
 }
